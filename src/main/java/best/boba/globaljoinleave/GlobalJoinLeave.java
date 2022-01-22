@@ -1,4 +1,4 @@
-package best.boba.GlobalJoinLeave;
+package best.boba.globaljoinleave;
 
 import com.google.inject.Inject;
 import com.velocitypowered.api.event.EventManager;
@@ -23,8 +23,14 @@ public class GlobalJoinLeave {
         this.config = new Config(server, logger);
     }
 
+    public void initialize() {
+        EventManager eventManager = this.config.server().getEventManager();
+        eventManager.register(this, new ListenerServerConnected(this.config));
+        eventManager.register(this, new ListenerDisconnect(this.config));
+    }
+
     @Subscribe
     public void onProxyInitialize(ProxyInitializeEvent event) {
-        EventManager eventManager = this.config.server().getEventManager();
+        initialize();
     }
 }

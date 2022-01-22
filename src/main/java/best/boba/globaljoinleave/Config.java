@@ -1,4 +1,4 @@
-package best.boba.GlobalJoinLeave;
+package best.boba.globaljoinleave;
 
 import com.velocitypowered.api.proxy.ProxyServer;
 import org.slf4j.Logger;
