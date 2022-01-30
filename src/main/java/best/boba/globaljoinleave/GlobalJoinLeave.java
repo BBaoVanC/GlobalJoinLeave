@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 
 @Plugin(id = "globaljoinleave",
         name = "GlobalJoinLeave",
-        version = "1.0",
+        version = "1.0.1",
         url = "https://github.com/bobacraft/GlobalJoinLeave",
         authors = {"bbaovanc"},
         description = "Global join/leave messages for the Velocity proxy"
@@ -27,6 +27,7 @@ public class GlobalJoinLeave {
         EventManager eventManager = this.config.server().getEventManager();
         eventManager.register(this, new ListenerServerConnected(this.config));
         eventManager.register(this, new ListenerDisconnect(this.config));
+        eventManager.register(this, new ListenerKickedFromServer(this.config));
     }
 
     @Subscribe
