@@ -25,7 +25,7 @@ public class ListenerKickedFromServer {
         }
 
         this.config.server().getAllPlayers().parallelStream().forEach(player -> player.sendMessage(Component.text(
-                String.format("%s was kicked from %s",
+                String.format("%s was disconnected from %s",
                         event.getPlayer().getUsername(),
                         event.getServer().getServerInfo().getName())
         ).color(NamedTextColor.GRAY)));
