@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 
 @Plugin(id = "globaljoinleave",
         name = "GlobalJoinLeave",
-        version = "1.0.1",
+        version = "1.0.2",
         url = "https://github.com/bobacraft/GlobalJoinLeave",
         authors = {"bbaovanc"},
         description = "Global join/leave messages for the Velocity proxy"
